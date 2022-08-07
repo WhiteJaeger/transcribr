@@ -1,10 +1,10 @@
 import {letterToSound} from './constants.js';
 import {get_word_stress_position} from "./utils.js";
-import {Word} from "./Word.js";
+import {PhoneticWord} from "./PhoneticWord.js";
 
 function transcribe(word) {
   get_word_stress_position(word).then(data => {
-    const wordRepresentation = new Word(word, data['stress']);
+    const wordRepresentation = new PhoneticWord(word, data['stress']);
     console.log(wordRepresentation.stressPosition, wordRepresentation.letters);
   });
   return 1;

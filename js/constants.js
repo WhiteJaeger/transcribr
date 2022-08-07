@@ -1,4 +1,7 @@
 export const vowels = 'ауеыоэяию';
+export const softeningLetters = 'еёяиюь';
+export const deafConsonants = 'пфктсшхчцщ';
+export const voicedConsonants = 'бвгдзжлмнрй';
 
 export const apiURL = 'https://word-stresses.herokuapp.com/get_word_stress';
 
@@ -9,18 +12,26 @@ export const letterToSound = {
     "firstUnstressed": "ʌ"
   },
   "б": {
+    "voiced": "б",
+    "deaf": "п",
     "soft": "б'",
     "hard": "б"
   },
   "в": {
+    "voiced": "в",
+    "deaf": "ф",
     "soft": "в'",
     "hard": "в"
   },
   "г": {
+    "voiced": "г",
+    "deaf": "к",
     "soft": "г'",
     "hard": "г"
   },
   "д": {
+    "voiced": "д",
+    "deaf": "т",
     "soft": "д'",
     "hard": "д"
   },
@@ -35,10 +46,14 @@ export const letterToSound = {
     "firstUnstressed": "ʌ"
   },
   "ж": {
+    "voiced": "ж",
+    "deaf": "ш",
     "soft": "",
     "hard": "ж"
   },
   "з": {
+    "voiced": "з",
+    "deaf": "с",
     "soft": "з'",
     "hard": "з"
   },
