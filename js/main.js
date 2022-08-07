@@ -1,13 +1,13 @@
-import {letterToSound} from './constants.js';
-import {get_word_stress_position} from "./utils.js";
+import {getWordStressPosition} from "./utils.js";
 import {PhoneticWord} from "./PhoneticWord.js";
 
 function transcribe(word) {
-  get_word_stress_position(word).then(data => {
-    const wordRepresentation = new PhoneticWord(word, data['stress']);
-    console.log(wordRepresentation.stressPosition, wordRepresentation.letters);
+  return new Promise(function (resolve) {
+    getWordStressPosition(word).then(data => {
+      const wordRepresentation = new PhoneticWord(word, data['stress']);
+      resolve(wordRepresentation.value);
+    });
   });
-  return 1;
 }
 
 
@@ -15,7 +15,9 @@ window.addEventListener('load', function () {
   const button = document.getElementById('transcribe');
   button.addEventListener('click',  () => {
     const word = document.getElementById('input-text').value;
-    const result = transcribe(word);
-    console.log(result);
+    transcribe(word).then((result) => {
+      const resultContainer = document.getElementById('result');
+      resultContainer.innerText = result;
+    });
   });
 })

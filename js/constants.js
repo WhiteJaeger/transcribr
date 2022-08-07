@@ -1,4 +1,5 @@
 export const vowels = 'ауеыоэяию';
+export const doubleSoundVowels = 'еяюё';
 export const softeningLetters = 'еёяиюь';
 export const deafConsonants = 'пфктсшхчцщ';
 export const voicedConsonants = 'бвгдзжлмнрй';
@@ -48,7 +49,6 @@ export const letterToSound = {
   "ж": {
     "voiced": "ж",
     "deaf": "ш",
-    "soft": "",
     "hard": "ж"
   },
   "з": {
@@ -62,7 +62,10 @@ export const letterToSound = {
     "unstressed": "и",
     "firstUnstressed": "и"
   },
-  "й": "",
+  "й": {
+    "soft": "j'",
+    "hard": ""
+  },
   "к": {
     "soft": "к'",
     "hard": "к"
@@ -108,11 +111,26 @@ export const letterToSound = {
     "soft": "ф'",
     "hard": "ф"
   },
-  "х": {},
-  "ц": "",
-  "ч": "",
-  "ш": "",
-  "щ": "",
+  "х": {
+    "soft": "х'",
+    "hard": "х"
+  },
+  "ц": {
+    "soft": "ц",
+    "hard": "ц"
+  },
+  "ч": {
+    "soft": "ч'",
+    "hard": "ч'"
+  },
+  "ш": {
+    "soft": "ш",
+    "hard": "ш"
+  },
+  "щ": {
+    "soft": "щ'",
+    "hard": "щ'"
+  },
   "ъ": "",
   "ы": {
     "stressed": "ы'",
