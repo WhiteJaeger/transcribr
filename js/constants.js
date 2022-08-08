@@ -64,7 +64,7 @@ export const letterToSound = {
   },
   "й": {
     "soft": "j'",
-    "hard": ""
+    "hard": "j'"
   },
   "к": {
     "soft": "к'",
