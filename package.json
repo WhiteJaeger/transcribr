@@ -5,6 +5,11 @@
   "keywords": ["NLP", "Russian"],
   "license": "MIT",
   "author": "Andrei K.",
+  "targets": {
+    "default": {
+      "distDir": "./docs"
+    }
+  },
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
