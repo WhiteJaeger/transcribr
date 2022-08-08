@@ -65,6 +65,6 @@ export class PhoneticWord {
 
   get value() {
     const result = this.sounds.map(soundRepresentation => soundRepresentation.value);
-    return result.join('');
+    return `[${result.join('')}]`;
   }
 }

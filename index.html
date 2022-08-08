@@ -3,17 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Транскрибр</title>
   <meta content="" name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-
-  <meta content="" property="og:title">
-  <meta content="" property="og:type">
-  <meta content="" property="og:url">
-  <meta content="" property="og:image">
-
-  <link href="site.webmanifest" rel="manifest">
-  <link href="icon.png" rel="apple-touch-icon">
 
   <link href="css/normalize.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
@@ -31,25 +23,27 @@
 
 <body>
 
-<nav class="navbar bg-light justify-content-center">
+<nav class="navbar bg-light">
   <div class="container-fluid">
     <span class="navbar-text">
-      <b>Transcribr</b>
+      <b>Транскрибр - инструмент для транскрипции слов русского языка</b>
     </span>
   </div>
 </nav>
 
 <div class="container text-center m-3">
   <div class="row d-flex justify-content-center">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="input-group">
-        <input aria-describedby="transcribe" aria-label="Word to transcribe" class="form-control" placeholder="Word to transcribe"
+        <input aria-describedby="transcribe" aria-label="Word to transcribe" class="form-control" placeholder="Введите слово"
                type="text" id="input-text">
-        <button class="btn btn-outline-secondary" id="transcribe" type="button">Transcribe</button>
+        <button class="btn btn-outline-secondary" id="transcribe" type="button">Транскрибировать</button>
       </div>
     </div>
-    <div>
-      <p id="result"></p>
+  </div>
+  <div class="row d-flex justify-content-center" id="result-container">
+    <div class="border border-dark p-2 my-2 col-md-3">
+      <p>Результат:&nbsp;<span id="result"></span></p>
     </div>
   </div>
 </div>

@@ -1,10 +1,10 @@
 {
-  "name": " ",
-  "version": "0.0.1",
+  "name": "transcribr",
+  "version": "0.3",
   "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "keywords": ["NLP", "Russian"],
+  "license": "MIT",
+  "author": "Andrei K.",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
