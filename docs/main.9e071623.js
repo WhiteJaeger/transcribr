@@ -9,4 +9,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./Sound.js":"x8YA","./constants.js":"MuPq"}],"d6sW":[function(require,module,exports) {
 "use strict";var e=require("./utils.js"),t=require("./PhoneticWord.js");function n(n){return new Promise(function(s){(0,e.getWordStressPosition)(n).then(function(e){var i=new t.PhoneticWord(n,e.stress);console.log("Stress position: ".concat(i.stressPosition)),s(i.value)})})}window.addEventListener("load",function(){var e=document.getElementById("transcribe");e.addEventListener("click",function(){var t=document.getElementById("input-text").value.toLowerCase();e.classList.add("disabled"),n(t).then(function(t){document.getElementById("result").innerText=t,document.getElementById("result-container").classList.remove("invisible"),e.classList.remove("disabled")})})});
 },{"./utils.js":"MgTz","./PhoneticWord.js":"uvH6"}]},{},["d6sW"], null)
-//# sourceMappingURL=/main.9e071623.js.map
+//# sourceMappingURL=main.9e071623.js.map

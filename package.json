@@ -5,13 +5,8 @@
   "keywords": ["NLP", "Russian"],
   "license": "MIT",
   "author": "Andrei K.",
-  "targets": {
-    "default": {
-      "distDir": "./docs"
-    }
-  },
   "scripts": {
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --out-dir docs --public-url ./",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
