@@ -2,19 +2,23 @@ import {letterToSound, doubleSoundVowels} from "./constants.js";
 
 
 export class VowelSound {
-  constructor(letter, positionRelativeToStressed, isBeginning) {
+  constructor(letter, positionRelativeToStressed, isBeginning, afterVowel) {
     this.letter = letter;
     this.positionRelativeToStressed = positionRelativeToStressed;
     this.value = 'UNK';
     this.isBeginning = isBeginning;
+    this.afterVowel = afterVowel;
+    this.isDoubleSound = doubleSoundVowels.includes(this.letter);
     this.determineValue();
   }
 
   determineValue() {
 
-    if (this.isBeginning && doubleSoundVowels.includes(this.letter)) {
-      this.value = letterToSound[this.letter].full;
-      return;
+    if (this.isDoubleSound) {
+      if (this.isBeginning || this.afterVowel) {
+        this.value = letterToSound[this.letter].full;
+        return;
+      }
     }
 
     switch (this.positionRelativeToStressed) {

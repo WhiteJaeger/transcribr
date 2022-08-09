@@ -14,18 +14,25 @@ export class PhoneticWord {
     const letters = this.word.split('');
     for (let i = 0; i < letters.length; i++) {
       const letter = letters[i];
-      const isBeginning = i === 0;
 
       // Vowels
       if (vowels.includes(letter)) {
 
+        const isBeginning = i === 0;
+
+        // Whether the current vowel is preceded by the vowel
+        let afterVowel = null;
+        if (isBeginning) {
+          afterVowel = false;
+        } else afterVowel = vowels.includes(letters[i - 1]);
+
         if ((i - this.stressPosition) === 0) {
           // The current vowel is the stressed vowel
-          this.sounds.push(new VowelSound(letter, 0, isBeginning));
+          this.sounds.push(new VowelSound(letter, 0, isBeginning, afterVowel));
           continue;
         } else if (i > this.stressPosition) {
           // The current vowel is after the stressed one
-          this.sounds.push(new VowelSound(letter, 1, isBeginning));
+          this.sounds.push(new VowelSound(letter, 1, isBeginning, afterVowel));
           continue;
         }
 
@@ -42,12 +49,12 @@ export class PhoneticWord {
           }
         }
 
-        this.sounds.push(new VowelSound(letter, relativePositionToStressed, isBeginning));
+        this.sounds.push(new VowelSound(letter, relativePositionToStressed, isBeginning, afterVowel));
         continue;
       }
 
       // Consonants
-      if (i === letters.length) {
+      if (i === letters.length - 1) {
         // Last
         this.sounds.push(new ConsonantSound(letter, false, false));
       } else if (softeningLetters.includes(letters[i + 1])) {
