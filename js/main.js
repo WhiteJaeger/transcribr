@@ -5,7 +5,6 @@ function transcribe(word) {
   return new Promise(function (resolve) {
     getWordStressPosition(word).then(data => {
       const wordRepresentation = new PhoneticWord(word, data['stress']);
-      console.log(`Stress position: ${wordRepresentation.stressPosition}`);
       resolve(wordRepresentation.value);
     });
   });

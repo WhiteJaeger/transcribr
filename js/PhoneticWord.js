@@ -2,12 +2,33 @@ import {ConsonantSound, VowelSound} from "./Sound.js";
 import {vowels, softeningLetters, deafConsonants} from "./constants.js";
 
 
+function findVowelPosition(word) {
+  // For single syllable words or
+  // words that were not found in the database
+  for (const vowel of vowels) {
+    const position = word.indexOf(vowel);
+    if (position !== -1) {
+      return position;
+    }
+  }
+  return -1;
+}
+
+
 export class PhoneticWord {
   constructor(word, stressPotion) {
     this.word = word.toLowerCase();
     this.sounds = [];
     this.stressPosition = stressPotion;
     this.parseWord();
+  }
+
+  get stressPosition() {
+    return this._stressPosition;
+  }
+
+  set stressPosition(value) {
+    this._stressPosition = !value ? findVowelPosition(this.word) : value
   }
 
   parseWord() {
